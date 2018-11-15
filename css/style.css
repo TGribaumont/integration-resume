@@ -1,0 +1,1004 @@
+/*
+Theme Name: vanoasimple
+Theme URI: TBD
+Author: Sean Matthews
+Author URI: TBD
+Description: Basic theme for Vanoa.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: SeanMatthews vanoasimple
+Tags: basis
+
+This theme, like WordPress, is licensed under the GPL.
+
+Resetting all styles using Eric Meyer's reset CSS http://meyerweb.com/eric/tools/css/reset/index.html
+Using Nicolas Gallagher and Jonathan Neal's normalize.css http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+
+/*
+Table of Contents
+
+1.0 Reset
+2.0 Normalize
+3.0 Elements
+4.0 Nav
+5.0 Header
+6.0 Content
+    6.1 Info
+    6.2 Portfolio web
+    6.3 Portfolio print
+    6.4 Contact
+7.0 Footer
+*/
+
+
+/*
+
+*  1.0 Reset
+
+*  http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+
+*  2.0 Normalize
+
+*/
+
+
+
+/*
+
+*  3.0 Elements
+
+*/
+
+html {
+    font-family: 'Ubuntu';
+    font-weight: 400;
+}
+
+body {
+    /*background-color: #94A5B2;*/
+    background-color: #F2F9FF;
+    /*color: #021324;*/
+    /*color: #031B33;*/
+    color: #042240;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merienda';
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/*
+
+*  4.0 Nav
+
+*/
+
+#mainNav {
+    width: 100%;
+}
+
+#mainNav ul {
+    /*font-size: 0;*/
+}
+
+#mainNav li {
+    display: inline-block;
+    /*width: 20%;*/
+}
+
+/* Square grid */
+.square {
+    float:left;
+    position: relative;
+    width: calc(100% / 7);
+    padding-bottom : 14.2857%; /* = width for a 1:1 aspect ratio */
+    /*margin:1.66%;
+    background-color:#1E1E1E;*/
+    overflow:hidden;
+}
+
+.square:hover {
+    background-color: #F2F9FF;
+}
+
+.content {
+    position:absolute;
+    /*height:90%;*/ /* = 100% - 2*5% padding */
+    /*width:90%;*/ /* = 100% - 2*5% padding */
+    /*padding: 5%;*/
+    height: 100%;
+    width: 100%;
+
+}
+.table{
+    display:table;
+    width:100%;
+    height:100%;
+}
+.table-cell{
+    display:table-cell;
+    vertical-align:middle;
+    width: 100%;
+    height:100%;
+    text-align: center;
+}
+
+.table-cell a {
+
+}
+
+/*  For responsive images */
+
+.content .rs{
+    width:auto;
+    height:auto;
+    max-height:90%;
+    max-width:100%;
+}
+
+/*  For responsive images as background */
+
+.bg{
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+    color:#fff;
+}
+
+.img1{
+    background-image: url('https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg');
+}
+.img2{
+    background-image: url('https://farm7.staticflickr.com/6217/6216951796_e50778255c.jpg');
+}
+.img3{
+    background-image: url('https://farm4.staticflickr.com/3794/13893055574_3df0ab636b.jpg');
+}
+
+/* end of square grid */
+
+#mainNav .square a {
+    color: #f2f9ff;
+}
+
+#mainNav #linkLogo {
+    background-color: #1961C3;
+}
+
+#mainNav #linkLogo:hover,
+#mainNav #linkLogo.active {
+    background-color: #f2f9ff;
+}
+
+#mainNav #linkLogo:hover a/*,
+#mainNav #linkLogo.active a*/ {
+    color: #1961C3;
+}
+
+#mainNav #linkInfo {
+    background-color: #1f7af6;
+}
+
+#mainNav #linkInfo:hover,
+#mainNav #linkInfo.active {
+    background-color: #f2f9ff;
+}
+
+#mainNav #linkInfo:hover a/*,
+#mainNav #linkInfo.active a*/ {
+    color: #1f7af6;
+}
+
+#mainNav #linkWeb {
+    background-color: #57a7f3;
+}
+
+#mainNav #linkWeb:hover,
+#mainNav #linkWeb.active {
+    background-color: #f2f9ff;
+}
+
+#mainNav #linkWeb:hover a/*,
+#mainNav #linkWeb.active a*/ {
+    color: #57a7f3;
+}
+
+#mainNav #linkPrint {
+    background-color: #c3e6ff;
+}
+
+#mainNav #linkPrint:hover,
+#mainNav #linkPrint.active {
+    background-color: #f2f9ff;
+}
+
+#mainNav #linkPrint:hover a/*,
+#mainNav #linkPrint.active a*/ {
+    color: #c3e6ff;
+}
+
+#mainNav #linkContact {
+    background-color: #4882BF;
+}
+
+#mainNav #linkContact:hover,
+#mainNav #linkContact.active {
+    background-color: #f2f9ff;
+}
+
+#mainNav #linkContact:hover a/*,
+#mainNav #linkContact.active a*/ {
+    color: #4882BF;
+}
+
+#mainNav #linkLanguages {
+    background-color: #355F8C;
+}
+
+#mainNav #linkLanguages:hover,
+#mainNav #linkLanguages.active {
+    background-color: #f2f9ff;
+}
+
+#mainNav #linkLanguages:hover a/*,
+#mainNav #linkLanguages.active a*/ {
+    color: #355F8C;
+}
+
+#mainNav #linkBlog {
+    background-color: #093c73;
+}
+
+#mainNav #linkBlog:hover,
+#mainNav #linkBlog.active {
+    background-color: #f2f9ff;
+}
+
+#mainNav #linkBlog:hover a/*,
+#mainNav #linkBlog.active a*/ {
+    color: #093c73;
+}
+
+#mainNav .comingSoon {
+    display: table;
+    height: 100%;
+    width: 100%;
+    background: rgba(76,76,76,0.3);
+}
+#mainNav .comingSoon p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    transform: rotate(-25deg);
+    color: #f2f9ff;
+    font-size: 24px;
+}
+
+#mainNav .square .table-cell .linkTitle {
+    height: 33%;
+    width: 100%;
+    display: table;
+}
+
+#mainNav .square .table-cell .linkTitle h4,
+#mainNav .square .table-cell .linkTitle p {
+    display: none;
+    text-transform: uppercase;
+}
+
+#mainNav .square.active .table-cell .linkTitle h4,
+#mainNav .square:hover .table-cell .linkTitle h4,
+#mainNav .square.active .table-cell .linkTitle p,
+#mainNav .square:hover .table-cell .linkTitle p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#mainNav .square .table-cell .linkTitle h4 {
+    font-size: 30px;
+}
+
+#mainNav .square .table-cell .linkTitle p {
+    font-size: 22px;
+    padding: 0 20px;
+}
+
+/*#mainNav .square .table-cell img {
+    height: 40%;
+}*/
+
+#mainNav .square .table-cell .linkImage,
+#mainNav .square.active .table-cell .linkImage,
+#mainNav .square:hover .table-cell .linkImage {
+    height: 34%;
+}
+
+#mainNav #linkInfo.square .table-cell .linkImage {
+    /*height: 40%;*/
+    background: url(../images/logo_info1.png) no-repeat center center transparent;
+    background-size: 40%;
+}
+
+#mainNav #linkInfo.square.active .table-cell .linkImage,
+#mainNav #linkInfo.square:hover .table-cell .linkImage {
+    /*height: 40%;*/
+    background: url(../images/logo_info2.png) no-repeat center center transparent;
+    background-size: 40%;
+}
+
+#mainNav #linkWeb.square .table-cell .linkImage {
+    /*height: 40%;*/
+    background: url(../images/logo_web1.png) no-repeat center center transparent;
+    background-size: 40%;
+}
+
+#mainNav #linkWeb.square.active .table-cell .linkImage,
+#mainNav #linkWeb.square:hover .table-cell .linkImage {
+    /*height: 40%;*/
+    background: url(../images/logo_web2.png) no-repeat center center transparent;
+    background-size: 40%;
+}
+
+#mainNav #linkPrint.square .table-cell .linkImage {
+    /*height: 40%;*/
+    background: url(../images/logo_print1.png) no-repeat center center transparent;
+    background-size: 40%;
+}
+
+#mainNav #linkPrint.square.active .table-cell .linkImage,
+#mainNav #linkPrint.square:hover .table-cell .linkImage {
+    /*height: 40%;*/
+    background: url(../images/logo_print2.png) no-repeat center center transparent;
+    background-size: 40%;
+}
+
+#mainNav #linkContact.square .table-cell .linkImage {
+    /*height: 40%;*/
+    background: url(../images/logo_contact1.png) no-repeat center center transparent;
+    background-size: 40%;
+}
+
+#mainNav #linkContact.square.active .table-cell .linkImage,
+#mainNav #linkContact.square:hover .table-cell .linkImage {
+    /*height: 40%;*/
+    background: url(../images/logo_contact2.png) no-repeat center center transparent;
+    background-size: 40%;
+}
+
+/*
+
+*  5.0 Header
+
+*/
+
+.mainHeader {
+    background-color: #F2F9FF;
+    padding: 20px 50px;
+}
+
+.mainHeader .headerLeft {
+    width: 60%;
+    display: block;
+    float: left;
+}
+
+.mainHeader h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+.mainHeader h4 {
+    font-family: 'Ubuntu';
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.mainHeader .headerRight {
+    width: 40%;
+    display: block;
+    float: right;
+    text-align: right;
+}
+
+.mainHeader h2 {
+    font-family: 'Ubuntu';
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+/*.mainHeader .headerSocial {
+    width: 40%;
+    display: block;
+    float: right;
+}*/
+
+.mainHeader .headerSocial li {
+    display: inline-block;
+}
+
+.mainHeader .headerSocial li img {
+    width: 30px;
+}
+
+/*
+
+*  6.0 Content
+
+*/
+
+.mainSection {
+    background-color: #F2F9FF;
+    /*margin: 0 100px 50px;*/
+    min-height: 500px;
+    display: none;
+    /*padding: 80px 50px 50px;*/
+    padding: 0 50px 50px;
+}
+
+.mainSection.active {
+    display: block;
+}
+
+/*.mainSection*/ .banner {
+    height: 500px;
+    /*width: 100%;*/
+    background: url(../images/macbook-925387.jpg) no-repeat center center transparent;
+    background-size: cover;
+    /*padding: 0 -50px;
+    position: relative;
+    left: 0;
+    right: 0;*/
+}
+
+/* 6.1 Info */
+
+#sectionInfo {
+    padding: 0 0 50px;
+}
+
+#sectionInfo .sectionContent {
+    padding: 0 50px 0;
+}
+
+#sectionInfo #services {
+    margin-top: 50px;
+}
+
+#sectionInfo #services .servicesItem {
+    width: calc(30% - 42px);
+    padding: 0 20px 20px;
+    margin-right: 5%;
+    display: block;
+    float: left;
+    border: 1px solid #042240;
+    text-align: center;
+}
+
+#sectionInfo #services .servicesItem:nth-child(3n) {
+    margin-right: 0;
+}
+
+#sectionInfo #services .servicesItem h4 {
+    text-transform: uppercase;
+    text-align: center;
+    /*width: 100px;*/
+    font-size: 18px;
+    line-height: 28px;
+    position: relative;
+    bottom: 14px;
+    /*border: 1px solid #042240;
+    margin-bottom: -13px;*/
+    margin: 0 auto -14px;
+    background-color: #F2F9FF;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+#sectionInfo #services #serviceWebDev h4 {
+    color: #f27b74;
+}
+
+#sectionInfo #services #serviceResponsive h4 {
+    color: #62bf48;
+}
+
+#sectionInfo #services #serviceWordpress h4 {
+    color: #ba7dc7;
+}
+
+#sectionInfo #services .servicesItem .serviceDescription {
+    padding: 20px;
+    text-align: left;
+    line-height: 20px;
+}
+
+#sectionInfo #services .servicesItem .serviceComment {
+    padding: 20px;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+}
+
+/* 6.3 Skills */
+
+#sectionSkills {
+    padding: 0 0 0 50px;
+}
+
+#sectionSkills #skillsLC {
+    width: 20%;
+    float: left;
+    min-height: 300px;
+}
+
+#sectionSkills #skillsRC {
+    width: calc(80% - 100px);
+    float: left;
+    border-radius: 50px;
+    background-color: #F2F9FF;
+    padding: 0 50px;
+}
+
+#sectionSkills #skillsRC .skillsCategory {
+    text-align: center;
+    height: 153px;
+}
+
+#sectionSkills #skillsRC .skillsCategory .skillsTitle {
+    display: table;
+    height: 153px;
+    float: left;
+}
+
+#sectionSkills #skillsRC .skillsCategory .skillsTitle h4 {
+    display: table-cell;
+    padding-top: 22px;
+    font-size: 20px;
+    transform: rotate(-90deg);
+    color: #F2F9FF;
+}
+
+#sectionSkills #skillsRC #skillsLanguages {
+    background-color: #57a7f3;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+#sectionSkills #skillsRC #skillsIntegration {
+    background-color: #f27b74;
+}
+
+#sectionSkills #skillsRC #skillsDevelopment {
+    background-color: #62bf48;
+}
+
+#sectionSkills #skillsRC #skillsTools {
+    background-color: #ba7dc7;
+}
+
+#sectionSkills #skillsRC #skillsPersonal {
+    background-color: #ebf48d;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+#sectionSkills #skillsRC .skillsCategory .skillsList {
+    margin: 0 auto;
+    display: inline-block;
+    padding-top: 23px;
+}
+
+#sectionSkills #skillsRC .skillsCategory .skillsItem {
+    width: 140px;
+    /*padding: 20px 0;*/
+    margin: 0 10px;
+    display: block;
+    float: left;
+    border: 1px solid #042240;
+    background-color: #f2f9ff;
+}
+
+#sectionSkills #skillsRC .skillsCategory .skillsItem h5 {
+    text-transform: uppercase;
+    text-align: center;
+    width: 100px;
+    font-size: 14px;
+    line-height: 26px;
+    position: relative;
+    bottom: 13px;
+    border: 1px solid #042240;
+    /*margin-bottom: -13px;*/
+    margin: 0 auto -13px;
+    background-color: #F2F9FF;
+}
+
+#sectionSkills #skillsRC .skillsCategory .skillsItem img {
+    width: 100px;
+    padding: 10px 20px 0;
+}
+
+#sectionSkills #skillsRC .skillsCategory .skillsItem .skillsLevel {
+    text-align: center;
+    padding: 0 10px 10px;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+#sectionSkills #skillsRC .skillsCategory .skillsItem .skillsComments {
+    text-align: left;
+    /*padding: 0 10px 20px;*/
+}
+
+/* 6.2 Portfolio WEB */
+
+#sectionPortfolioWeb .sectionContent .portfolioItem {
+    display: block;
+    width: 30%;
+    float: left;
+    margin-right: 5%;
+    padding-bottom: 60px;
+}
+
+#sectionPortfolioWeb .sectionContent .portfolioItem:nth-child(3n) {
+    margin-right: 0;
+}
+
+#sectionPortfolioWeb .sectionContent .portfolioItem .projectImage img {
+    width: 100%;
+}
+
+#sectionPortfolioWeb .sectionContent .portfolioItem .projectTitle {
+    font-size: 20px;
+    padding: 10px 0 20px;
+}
+
+#sectionPortfolioWeb .sectionContent .portfolioItem .projectTitle a {
+    color: #042240;
+}
+
+#sectionPortfolioWeb .sectionContent .portfolioItem .projectTags {
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+#sectionPortfolioWeb .sectionContent .portfolioItem .projectTags li {
+    display: inline-block;
+}
+
+
+#sectionPortfolioWeb .sectionContent .portfolioItem .projectTags li + li:before {
+    content: "| ";
+}
+
+#sectionPortfolioWeb .sectionContent .portfolioItem .projectRights {
+    font-size: 16px;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+
+#sectionPortfolioWeb .sectionContent .portfolioItem .projectDescription {
+    font-size: 16px;
+}
+
+#sectionPortfolioWeb #project_maetjo h4 a {
+    color: #f7cadf;
+}
+
+#sectionPortfolioWeb #project_jneligan h4 a {
+    color: #5e2e27;
+}
+
+#sectionPortfolioWeb #project_birdconsult h4 a {
+    color: #546d69;
+}
+
+#sectionPortfolioWeb #project_isabelle h4 a {
+    color: #1a4d68;
+}
+
+#sectionPortfolioWeb #project_moniteurAuto h4 a {
+    color: #0055a6;
+}
+
+#sectionPortfolioWeb #project_vanoa h4 a {
+    color: #ef4554;
+}
+
+/* 6.2 Portfolio DESIGN */
+
+#sectionPortfolioDesign .sectionContent {
+    /*padding: 0 50px;*/
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem {
+    width: 350px;
+    display: block;
+    /*margin-bottom: -16px;*/
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem img {
+    width: calc(100% - 4px);
+    padding: 2px 2px;
+    display: block;
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem .projectInfo {
+    display: none;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    vertical-align: middle;
+    margin: 2px 2px;
+    background: rgba(76,76,76,0.6);
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem:hover .projectInfo {
+    display: block;
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem .projectInfo a {
+    color: #f2f9ff;
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem .projectInfo a h4 {
+    font-size: 26px;
+    padding-bottom: 10px;
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem .projectInfo a .projectTags li {
+    display: inline-block;
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem .projectInfo a .projectTags li:before {
+    content: "| ";
+}
+
+#sectionPortfolioDesign .sectionContent .portfolioItem .projectInfo a .projectTags li:first-child:before {
+    content: "";
+}
+
+/* 6.4 Contact */
+
+#sectionContact {
+    background-color: #042240;
+    color: #F2F9FF;
+    margin: 0 50px;
+    border-radius: 50px;
+    font-family: 'Merienda';
+}
+
+#contactIntro {
+    font-size: 40px;
+    padding: 50px 150px 50px;
+    text-align: center;
+}
+
+#contactForm {
+    padding-bottom: 50px;
+}
+
+#contactForm label {
+    font-family: 'Merienda';
+    font-size: 18px;
+    display: block;
+    width: 45%;
+    margin-right: 10%;
+    float: left;
+    padding-bottom: 20px;
+}
+
+#contactForm label:nth-child(2n) {
+    margin-right: 0;
+}
+
+#contactForm #labelMessage {
+    width: 100%;
+}
+
+#contactForm input {
+    width: 100%;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #F2F9FF;
+}
+
+#contactForm #labelMessage textarea {
+    width: 100%;
+    height: 200px;
+    background-color: #F2F9FF;
+}
+
+#contactForm #submit {
+    width: auto;
+    text-align: right;
+    display: inline-block;
+    float: right;
+    background-color: #042240;
+    color: #F2F9FF;
+    border: none;
+    font-family: 'Merienda';
+    font-size: 24px;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    /*pointer-events: none;*/
+    border: 2px solid #F2F9FF;
+}
+
+#contactInfo {
+    width: 330px;
+    /*height: 500px;*/
+    position: relative;
+    bottom: 500px;
+    right: 50px;
+    float: right;
+    margin-bottom: -500px;
+    background-color: #F2F9FF;
+    color: #042240;
+}
+
+#contactInfo p {
+    padding: 20px 10px;
+}
+
+#contactInfo p a {
+    color: #042240;
+}
+
+/*#contactInfo #contactSocial {
+    background: rgba(200,200,200,0.5);
+}*/
+
+#contactInfo #contactSocial li {
+    width: 70px;
+    padding-left: 10px;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+/*#contactInfo #contactSocial li:first-child {
+    padding-left: 0;
+}*/
+
+#contactInfo #contactSocial li:nth-child(4n) {
+    padding-right: 10px;
+}
+
+#contactInfo #contactSocial img {
+    width: 70px;
+}
+
+/*
+
+*  6.0 Footer
+
+*/
+
+#mainFooter {
+    background-color: #DCF1FF;
+    height: 50px;
+    margin: 0 100px;
+}
+
+#copyright,
+#developer {
+    width: 35%;
+    display: block;
+    float: left;
+    padding: 15px 0;
+}
+
+#copyright {
+    margin-left: 15%;
+}
+
+#developer {
+    text-align: right;
+    margin-right: 15%;
+}
+
+#img {
+	width: 20px;
+}
+
+/* 5.3 Social */
+
+#social {
+    height: 50px;
+    margin: 0 100px;
+    background-color: #F2F9FF;
+}
+
+#social ul li {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+#social ul li img {
+    width: 30px;
+}
+
+
+
+/* test lightbox */
+
+.lb-dataThumbnailsContainer p {
+    height: 20px;
+    color: red;
+}
+
+.lb-dataThumbnailsContainer .lb-image {
+    height: 200px;
+    width: auto;
+}
